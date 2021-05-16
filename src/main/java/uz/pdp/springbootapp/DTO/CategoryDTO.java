@@ -1,14 +1,16 @@
 package uz.pdp.springbootapp.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+import javax.validation.constraints.NotNull;
+
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoryDTO {
+    @NotNull(message = "Name should not be empty")
     private String name;
-
+    @NotNull(message = "ParentCategoryId should not be empty")
     private Integer parentCategoryId;
 }

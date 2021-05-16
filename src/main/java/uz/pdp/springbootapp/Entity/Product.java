@@ -1,7 +1,8 @@
 package uz.pdp.springbootapp.Entity;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import uz.pdp.springbootapp.Entity.template.AbsEntity;
 
 import javax.persistence.Column;
@@ -10,7 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
+@Setter
 @Entity
 public class Product extends AbsEntity {
     @ManyToOne(optional = false)

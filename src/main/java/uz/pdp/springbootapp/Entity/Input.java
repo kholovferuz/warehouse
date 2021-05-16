@@ -1,11 +1,13 @@
 package uz.pdp.springbootapp.Entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class Input {
     @Id
@@ -15,9 +17,6 @@ public class Input {
     private Timestamp date;
 
     private String invoiceNumber;
-
-    @Column(unique = true, nullable = false)
-    private String code;
 
     @ManyToOne
     private Warehouse warehouse;

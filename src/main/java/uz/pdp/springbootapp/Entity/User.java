@@ -1,12 +1,13 @@
 package uz.pdp.springbootapp.Entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity(name = "users")
 public class User {
     @Id
@@ -21,10 +22,6 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String phoneNumber;
-
-    @Column(nullable = false, unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String code;
 
     @Column(nullable = false)
     private String password;

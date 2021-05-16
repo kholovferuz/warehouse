@@ -1,22 +1,28 @@
 package uz.pdp.springbootapp.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class InputDTO {
     private Timestamp date;
-    private String invoiceNumber;
-    private String code;
 
+    @NotNull(message = "InvoiceNumber should not be empty")
+    private String invoiceNumber;
+
+    @NotNull(message = "WarehouseId should not be empty")
     private Integer warehouseId;
 
+
+    @NotNull(message = "SupplierId should not be empty")
     private Integer supplierId;
 
+
+    @NotNull(message = "CurrencyId should not be empty")
     private Integer currencyId;
 }
